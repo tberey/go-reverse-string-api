@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	//Assign Port flag
+	//Assign Port (8080) flag.
 	portInput := flag.String("port", "8080", "Server init port")
 	flag.Parse()
 
@@ -24,7 +24,7 @@ func main() {
 //reverseHandler function is a HTTP handler which takes a "text" query string and returns it reversed.
 func reverseHandler(w http.ResponseWriter, r *http.Request) {
 
-	//GET method return any text in the query string, and assign.
+	//GET method to assign any string found paired with the "text" key, in the query string.
 	textQuery := r.URL.Query().Get("text")
 
 	//Error handling: Write error code (402), if empty string returned from GET method performed on query string.
